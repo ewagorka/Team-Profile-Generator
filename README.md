@@ -5,7 +5,7 @@
 A Node.js command-line application. It takes in information about employees on a software engineering team, then generate an HTML webpage that displays summaries for each person.
 
   ## Deployed website screenshot
- ![Deployed website screenshot](https://img.shields.io/badge/License-MIT-blue.svg)
+ ![Deployed website screenshot](assets/images/generatedTeamWebsite.png)
  
 
   ## Table of Contents
@@ -42,6 +42,8 @@ A Node.js command-line application. It takes in information about employees on a
   ```
   npm test
   ```
+  ## Credits
+  This was the first time I used validation with inquirer, and I based my function & how I validate user input on the example shown here: https://stackoverflow.com/questions/2647867/how-can-i-determine-if-a-variable-is-undefined-or-null
 
   ## Questions
 
