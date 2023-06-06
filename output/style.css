@@ -19,3 +19,7 @@
     background-color: rgb(43, 125, 239);
     color: white;
 }
+
+.card-body{
+    background-color: rgb(247, 247, 247);
+}

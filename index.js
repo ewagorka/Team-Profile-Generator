@@ -16,26 +16,39 @@ const employees = [];
 
 //questions
 
+//validate function
+// 
+const validateAnswer = async (input) => {
+    if (input == "") {
+       return 'Please provide information';
+    }
+    return true;
+ };
+
 const questions = [
     {
         type: 'input',
         message: 'Provide name:',
         name: 'name',
+        validate: validateAnswer
     },
     {
         type: 'input',
         message: 'Provide id:',
         name: 'id',
+        validate: validateAnswer
     },
     {
         type: 'input',
         message: 'Provide email:',
         name: 'email',
+        validate: validateAnswer
     },
     {
         type: 'input',
         message: `Provide an office number`,
         name: 'lastParameter',
+        validate: validateAnswer
     }
 ];
 
@@ -68,7 +81,7 @@ function whatNext() {
                 type: 'list',
                 message: 'What would you like to do next?',
                 name: 'next',
-                choices: ['Add an engineer', 'Add an Intern', 'Im done'],
+                choices: ['Add an engineer', 'Add an Intern', 'Finish adding'],
             }
         ])
         // based on user choice decide what to do next
@@ -87,12 +100,10 @@ function whatNext() {
                     addEmployee("intern");
                     break;
 
-                case "Im done":
+                case "Finish adding":
                     fs.writeFile(outputPath, render(employees), (err) =>
                         // if there's an error log it out, if not say HTML generated!
                         err ? console.log(err) : console.log('HTML generated!'))
-                    console.log("All done, thanks");
-                    console.log(employees);
                     break;
             }
         })
@@ -100,7 +111,7 @@ function whatNext() {
 }
 
 function addEmployee(type) {
-    console.log("HELLO");
+    
     inquirer
         .prompt(questions)
         .then((data) => {
