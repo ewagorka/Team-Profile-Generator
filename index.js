@@ -81,7 +81,7 @@ function whatNext() {
                 type: 'list',
                 message: 'What would you like to do next?',
                 name: 'next',
-                choices: ['Add an engineer', 'Add an Intern', 'Finish adding'],
+                choices: ['Add an engineer', 'Add an Intern', 'Finish building team'],
             }
         ])
         // based on user choice decide what to do next
@@ -100,7 +100,7 @@ function whatNext() {
                     addEmployee("intern");
                     break;
 
-                case "Finish adding":
+                case "Finish building team":
                     fs.writeFile(outputPath, render(employees), (err) =>
                         // if there's an error log it out, if not say HTML generated!
                         err ? console.log(err) : console.log('HTML generated!'))
