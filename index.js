@@ -47,10 +47,14 @@ function init() {
     inquirer
         // ask user all questions from the questions array
         .prompt(questions)
-        // after all input is collected, run the writeToFile function
+        // after all input is collected
         .then((data) => {
+            // add manager
+            let employee = new Manager(data.name, data.id, data.email, data.lastParameter);
+            employees.push(employee);
+
+            //ask user what they want to do next
             whatNext();
-            console.log("yay");
         })
 }
 
@@ -69,18 +73,24 @@ function whatNext() {
         ])
         // based on user choice decide what to do next
         .then((data) => {
-            
-            console.log("Here is : "+data.next);
+
+            console.log("Here is : " + data.next);
             switch (data.next) {
+
                 case "Add an engineer":
                     questions[3].message = "Provide a github username:"
                     addEmployee("engineer");
                     break;
+
                 case "Add an Intern":
                     questions[3].message = "Provide a school name:"
                     addEmployee("intern");
                     break;
+
                 case "Im done":
+                    fs.writeFile(outputPath, render(employees), (err) =>
+                        // if there's an error log it out, if not say HTML generated!
+                        err ? console.log(err) : console.log('HTML generated!'))
                     console.log("All done, thanks");
                     console.log(employees);
                     break;
@@ -101,6 +111,10 @@ function addEmployee(type) {
             } else if (type == "intern") {
                 let intern = new Intern(data.name, data.id, data.email, data.lastParameter);
                 employees.push(intern)
+            }
+            else if (type == "manager") {
+                let manager = new Manager(data.name, data.id, data.email, data.lastParameter);
+                employees.push(manager)
             }
 
             whatNext();

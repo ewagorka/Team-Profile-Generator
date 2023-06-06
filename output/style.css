@@ -1,0 +1,21 @@
+.team-heading{
+    background-color: rgb(221, 54, 76);
+    color: white;
+}
+
+.team-area{
+    padding-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.employee-card{
+    width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px;
+}
+
+.card-header{
+    background-color: rgb(43, 125, 239);
+    color: white;
+}
