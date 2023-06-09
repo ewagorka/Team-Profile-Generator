@@ -15,7 +15,9 @@ A Node.js command-line application. It takes in information about employees on a
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
-  
+
+ ## Video Demo
+ Please see how the app works here: https://drive.google.com/file/d/1cxxAX91NorOYYtiTjFht-WPAUKSSbB7j/view?usp=sharing  
   ## Installation
 
   To install necessary dependecies, run the following command:
