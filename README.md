@@ -23,6 +23,12 @@ A Node.js command-line application. It takes in information about employees on a
   npm install
   ```
 
+  Then to run the app run
+```
+  Node index.js
+```
+
+This should start the app & ask you for the manager details. After entering the details of the manager you will have the optiton to add an Enginner, add an Intern or Finish building team. Choosing an option to add another team member will start another round of questions, asking you for the team member's details. If you choose to Finish building team, the app will generate a new HTML website in the output folder. This website will then contain cards with all your team members and their details.
   ## Usage
   
   What you should know before using this app: 
